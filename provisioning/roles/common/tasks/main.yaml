@@ -1,0 +1,28 @@
+---
+- name: Update to the latest versions
+  apt: 
+    name:
+        - bash
+        - openssl
+        - libssl-dev
+        - libssl-doc
+    update_cache: yes
+    state: latest
+
+- name: Install common packages
+  apt:
+    name:
+        - build-essential
+        - vim
+        - git
+        - curl
+        - apache2-utils
+        - python-dev
+        - python-pip
+    state: present
+
+- name: Install pip packages
+  pip:
+    name:
+      - passlib
+    state: present
