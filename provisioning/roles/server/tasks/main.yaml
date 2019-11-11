@@ -1,0 +1,5 @@
+---
+- name: Run a simple http server
+  command: nohup python -mSimpleHTTPServer 1234 &
+  async: 100
+  poll: 0
